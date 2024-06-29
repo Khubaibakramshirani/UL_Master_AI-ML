@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html><head></head><body style="color: rgb(32, 33, 34); font-family: Verdana; font-size: 12pt;"><h1>Task 3 - Naïve Bayes Classifier</h1>
+<p><strong>Weight: 20/100</strong></p>
+<p>The Naïve Bayes Classifier is a simple probabilistic classifier that is based on the application of the Bayes theorem. In this task, we will not code the Naïve Bayes Classifier by hand, but instead will employ the powerful Python library, <code>scikitlearn</code>. We will also use the <code>pandas</code> library to read the data from the CSV.&nbsp;</p>
+<p>We will train an algorithm to predict a person’s sex based on the features of height (in inches) and weight (in pounds). We will use a large set of samples to train our classifier.&nbsp;</p>
+<hr>
+<p><a href="Activity_2/01_heights_weights_sex.csv?isCourseFile=true" target="_self"></a></p>
+<ol>
+<li>Plot the data from the CSV file to see if there is a reasonable chance of separating the sexes using our two selected features. Does it seem that our classifier has some chance of getting a good result?&nbsp;
+<ol style="list-style-type: lower-alpha;" type="a">
+<li>Examining data is very important. If there was no chance of classification (for example, if the data were randomly mixed and no evident pattern), then we would need a new classification approach or a new set of features</li>
+<li>You can use&nbsp;<code>matplotlib</code>&nbsp;for the plotting, or&nbsp;<code>pandas</code>&nbsp;own plotting functions (ref&nbsp;<code>data.plot</code>)</li>
+</ol>
+</li>
+<li>Use the&nbsp;<code>train_test_split</code>&nbsp;function in&nbsp;<code>scikitlearn</code>&nbsp;to split the data into training and test data. Use a split of 33% for test data and the remainder for training.&nbsp;&nbsp;
+<ol style="list-style-type: lower-alpha;" type="a">
+<li>The importance of splitting training and test data will be explained later in the module&nbsp;</li>
+</ol>
+</li>
+<li>Fit a model using&nbsp;<code>GaussianNB</code>&nbsp;from&nbsp;<code>scikitlearn</code>. Train using the train data. Test using the predict function on the test data.&nbsp;A Gaussian model is required for continuous variables (such as height and weight)&nbsp;</li>
+<li>What accuracy do you get? (Hint:&nbsp;<code>accuracy_score</code>&nbsp;from&nbsp;<code>sklearn.metrics</code>)&nbsp;</li>
+<li>Create lots (e.g. 5000) of samples of persons with random weights and heights between reasonable ranges. Apply the predict function to predict if these random feature pairs are male or female. Plot on a scatter plot&nbsp;</li>
+</ol>
+<p>The last part of the exercise will give you a good feeling about the decision boundary of the classifier.&nbsp;</p>
+<p></p></body></html>

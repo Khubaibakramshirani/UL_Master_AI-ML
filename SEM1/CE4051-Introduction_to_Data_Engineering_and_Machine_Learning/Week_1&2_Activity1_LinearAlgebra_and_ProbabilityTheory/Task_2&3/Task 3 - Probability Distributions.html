@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html><head></head><body style="color: rgb(32, 33, 34); font-family: Verdana; font-size: 12pt;"><h1>Task 2 - Probability Distributions</h1>
+<p><strong>Weight: 35/100</strong></p>
+<p>Describe two separate problems that contain a chance element. One experiment should use a continuous random variable, the other a discrete random variable. &nbsp;Use two different distributions (normal, uniform, binomial, …)&nbsp;</p>
+<p>Write Python code to simulate experiments with your two chosen problems. The simulations can include a simulated action (e.g. rolling dice) or a simulated observation (e.g. observing rain or sunshine). The code should run the experiment enough times such that you can calculate/approximate the following:&nbsp;</p>
+<ol>
+<li>The expected value of your random variable.</li>
+<li>The standard deviation of your random variable.&nbsp;</li>
+</ol>
+<p>Additionally, you should be able to:&nbsp;</p>
+<ol>
+<li>Plot the distribution found in your simulated experiment with an appropriate number of 'bins'&nbsp;</li>
+</ol>
+<hr>
+<p>Below are two examples that you may use in this task. However, note that I will give higher credit if you can come up with your own!</p>
+<hr>
+<p><strong>An example 1:</strong> A gamble is placed depending on the result of the dice.<br>This result of a dice roll is a uniform distribution, as all dice outcomes are equally likely; 1/6 probablility<br>The result is discrete as the result of a dice throw can only take on values of: 1,2,3,4,5,6</p>
+<p>if dice = 1,2,3 will lose -1<br>if dice = 4 will draw, 0<br>if dice = 5 will win, 1<br>if dice = 6 will win, 2<br>We know this is a fair game theoretically, but what will the simulations show?</p>
+<p>Simulate 1000 dice results and record both the result of the dice, and the result of the gamble.<br>To then calculate the expected value &amp; standard deviation of both the result of the dice and the result of the gamble.</p>
+<p>Finally plot the frequency of the dice rolls &amp; plotting the frequency of the gamble result.</p>
+<hr>
+<p><strong>Example 2:</strong> Test results of some made up exam/test/whatever really<br>This will be a normally distributed variable, and will be continious as test result could take on any value<br>How much would it costs to pay people for good scores?</p>
+<p>Using properties of Normal Distribution<br>We expect 99.7% of data within mean +- 3( std . dev)<br>So marks would be roughly within 0-100, using a mean of 50, and std of 15<br>Going to consider paying students for grades below:</p>
+<p>If test result &lt; 50 , get nothing<br>If test result is between 50 &amp; 75 = 5<br>If test result is between 75 &amp; 100 = 10<br>Going to run for 10,000 simulations</p>
+<hr>
+<p>Some additional notes on probability distributions are available here:</p>
+<p><a href="../ProbabilityDistributions.pdf?isCourseFile=true" target="_self">ProbabilityDistributions.pdf</a></p></body></html>

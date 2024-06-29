@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html><head></head><body style="color: rgb(32, 33, 34); font-family: Verdana; font-size: 12pt;"><h1>Task 1 - Perceptrons OR Adaline</h1>
+<p><strong>Weight: 50/100</strong></p>
+<p>Choose&nbsp;<strong>ONE </strong>of the&nbsp;<strong>two&nbsp;</strong>following options (or if you submit both, we will award whichever scores the highest grade).</p>
+<hr>
+<h2>Option 1:&nbsp;Perceptrons</h2>
+<div>
+<p>We will use: <a href="../Python/01_heights_weights_sex.csv?isCourseFile=true" target="_self">01_heights_weights_sex.csv</a></p>
+<p>In this task, you will be provided with a simple Perceptron implementation (from&nbsp;<a target="_blank" rel="noreferrer noopener" href="https://sebastianraschka.com/Articles/2015_singlelayer_neurons.html">https://sebastianraschka.com/Articles/2015_singlelayer_neurons.html</a>), and you will investigate some of its properties, and how it is trained.&nbsp;</p>
+<ol>
+<li>Read the data that was used in the previous activity for the Bayes Classifier, and plot it as a scatter plot. Split the data into training and test data.&nbsp;</li>
+<li>Train the perceptron algorithm using the training data&nbsp;</li>
+<li>Calculate the accuracy score using the test data and&nbsp;sklearn.metrics&nbsp;</li>
+<li>Visualise&nbsp;the errors at each training epoch. Hint, the errors for each epoch are stored in the errors class variable&nbsp;</li>
+<li>Using many random inputs (e.g. 5000), plot to see if you can see the decision boundary. In this case, you will not be using the pandas dataframe, so it is probably better to use Matplotlib&nbsp;</li>
+</ol>
+<p>Then, discuss the following in Markdown cells:&nbsp;</p>
+<ol>
+<li>Describe what is happening as the training progresses.&nbsp;&nbsp;</li>
+<li>Do we arrive at the very best solution at the last epoch, or is there an epoch with a lower error? Why is that?&nbsp;</li>
+<li>Why can’t we get zero errors with this data?&nbsp;</li>
+</ol>
+<p>If you run the above with a learning rate (eta) of 0.1 and 50 epochs, you should see something like this as a visualization of the errors at each epoch:&nbsp;</p>
+<p><img src="../Images/PastedImage_d5ca92556e4b45ac834a34960a273bfb_image.png" data-d2l-editor-default-img-style="true" style="max-width: 100%;"></p>
+<p>Clearly, after a certain amount of learning, nothing useful is being done by the algorithm. A common approach to reduce learning time is to have a minimum acceptable error. This is known as an&nbsp;early exit&nbsp;criterion.&nbsp;</p>
+<ol>
+<li>Create a copy of the <code>Perceptron</code>&nbsp;class, and rename it to something reasonable, like <code>PerceptronEE</code>. Implement an early exit, to exit the training once convergence has been achieved, i.e. once the error is at an acceptable level.</li>
+</ol>
+<hr>
+<h2 role="heading" aria-level="4">Option 2: Adaline and Gradient Descent</h2>
+<p>We will use: <a href="../Python/iris_data.csv?isCourseFile=true" target="_self">iris_data.csv</a></p>
+<div>
+<p>In this task, you will be provided with a simple Adaline implementation (from&nbsp;<a target="_blank" rel="noreferrer noopener" href="https://sebastianraschka.com/Articles/2015_singlelayer_neurons.html">https://sebastianraschka.com/Articles/2015_singlelayer_neurons.html</a>), and you will investigate some of its properties, and how it is trained. Adaline is&nbsp;a&nbsp;perceptron that is trained with a gradient descent algorithm. You will use the rather famous Iris dataset [1, 2]. The&nbsp;focus&nbsp;of this task is to examine some properties of gradient descent.&nbsp;</p>
+<p>Examine the impact of the learning rate:&nbsp;</p>
+<ol>
+<li>Train the gradient descent algorithm with eta = 0.01, eta = 0.001, eta = 0.0001. Plot the cost as a function of epoch in each case. Note: it is useful to plot some on a log scale&nbsp;</li>
+<li>Explain what is happening in each case.&nbsp;</li>
+<li>How many epochs (approx.) for convergence with eta = 0.0001?&nbsp;</li>
+<li>Can you find a learning rate that converges quicker, but without overshoot?&nbsp;</li>
+<li>The learning rate can be very sensitive, a very small change can lead to overshoot. For example, have a look at what happens between a&nbsp;learning&nbsp;rate of 0.00045 and 0.0005, just a 5e-5 change&nbsp;</li>
+</ol>
+<p>Please note that this is just about the simplest gradient descent implementation possible. There are much more advanced algorithms that are typically used that improve robustness, avoid local minima, avoid&nbsp;overshoot,&nbsp;and improve convergence times. So,&nbsp;it is&nbsp;not all as "on a knife edge" as this example. But, in principle, picking a learning rate is still an important topic of machine learning.&nbsp;</p>
+<p>Then:&nbsp;</p>
+<ol>
+<li>Implement feature scaling on the data, and retrain the algorithm&nbsp;</li>
+<li>Print the residual cost in each iteration&nbsp;</li>
+<li>Describe how it compares to before feature scaling&nbsp;</li>
+<li>Using many random inputs (e.g. 5000) and plot to see if you can see the decision boundary for the feature scaled case. In this case, you will not be using the pandas dataframe, so it is probably better to use Matplotlib&nbsp;</li>
+</ol>
+<p><strong>Hint</strong>: in this case, the training data was scaled, so your test data&nbsp;must&nbsp;be scaled as well.&nbsp;</p>
+<p>[1]&nbsp;R. A. Fisher (1936). "The use of multiple measurements in taxonomic problems". Annals of Eugenics. 7 (2): 179–188&nbsp;</p>
+<p>[2]&nbsp;<a target="_blank" rel="noreferrer noopener" href="https://archive.ics.uci.edu/ml/datasets/iris">https://archive.ics.uci.edu/ml/datasets/iris</a>&nbsp;</p>
+</div>
+</div></body></html>

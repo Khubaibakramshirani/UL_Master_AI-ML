@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html><head></head><body style="color: rgb(32, 33, 34); font-family: Verdana; font-size: 12pt;"><div>
+<h1>Pytorch and CNNs for Fashion-MNIST</h1>
+<paper-icon-button title="Collapse 16 child cells under Activity 6: Pytorch and CNNs for Fashion-MNIST (Press <Shift> to also collapse sibling sections)" aria-disabled="false" role="button" noink="" icon="arrow-drop-down" tabindex="0"><iron-icon id="icon"></iron-icon></paper-icon-button></div>
+<p>In this activity, we are going to explore designing various neural networks for the FashionMNIST classification problem. This is, of course, a 'toy' problem, but the fundamentals of classification of images is here.</p>
+<h2>FashionMNIST</h2>
+<p><a rel="nofollow noopener" target="_blank" href="https://colab.research.google.com/corgiredirector?site=https%3A%2F%2Fwww.kaggle.com%2Fdatasets%2Fzalando-research%2Ffashionmnist&amp;link_redirector=1">Fashion-MNIST</a>&nbsp;is a dataset of&nbsp;<a rel="nofollow noopener" target="_blank" href="https://colab.research.google.com/corgiredirector?site=https%3A%2F%2Fwww.zalando.ie%2F&amp;link_redirector=1">Zalando</a>'s article images—consisting of a training set of 60,000 examples and a test set of 10,000 examples. Each example is a 28x28 grayscale image, associated with a label from 10 classes. Zalando intends Fashion-MNIST to serve as a direct drop-in replacement for the original MNIST dataset for benchmarking machine learning algorithms. It shares the same image size and structure of training and testing splits.</p>
+<p>The&nbsp;<a rel="nofollow noopener" target="_blank" href="https://colab.research.google.com/corgiredirector?site=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FMNIST_database&amp;link_redirector=1">original MNIST</a>&nbsp;dataset contains a lot of handwritten digits. Members of the AI/ML/Data Science community love this dataset and use it as a benchmark to validate their algorithms. In fact, MNIST is often the first dataset researchers try. "If it doesn't work on MNIST, it won't work at all", they said. "Well, if it does work on MNIST, it may still fail on others."</p>
+<p>The most basic models have achieved 99%+ accuracy on the original MNIST dataset, so it's not really any sort of test of a model. Zalando sought to replace the original MNIST dataset.</p>
+<p>Each training and test example is assigned to one of the following labels:</p>
+<ol start="0">
+<li>T-shirt/top</li>
+<li>Trouser</li>
+<li>Pullover</li>
+<li>Dress</li>
+<li>Coat</li>
+<li>Sandal</li>
+<li>Shirt</li>
+<li>Sneaker</li>
+<li>Bag</li>
+<li>Ankle boot</li>
+</ol>
+<p>Here is some examples of how the Fashion-MNIST data looks. Each class has tree rows.</p>
+<p><img alt="image.png" src="../Images/PastedImage_d5bfc4eac70244c2979dcce7201629da_pic0.png" data-d2l-editor-default-img-style="true" style="max-width: 100%;"></p>
+<p></p>
+<div>
+<h2>The Tasks</h2>
+</div>
+<p>We are going to train several networks to classify MNIST data, with everything being built using PyTorch. Some code will be provided. You will build the following networks.</p>
+<ol start="0">
+<li>Some common code is provided, however, there are a few gaps to fill in from you (loading the dataset, etc.)</li>
+<li>You will replicate the fully connected neural network (i.e., multi-layer perceptron) from the last activity, but this time using PyTorch</li>
+<li>For the original MNIST data, Yan LeCun built the LeNet-5 classifier. We are going to rebuild this in PyTorch, the same way it was originally implemented.</li>
+<li>We will then bring LeNet-5 into the modern era - that is, we'll replace some pooling and activation functions with more modern methods.</li>
+<li>Have at it! Try to build your own network, based on LeNet-5.</li>
+<li>In the above tasks, we have built models from scratch in PyTorch. Now, we will reuse an existing deep model (the ResNet) for this problem. We will cut the head off and replace it with a much smaller head - ResNet was trained for 1000 classes, we will retrain it for 10. We will also investigate how we might keep most of the weights, and only retrain a subset - this is transfer learning.</li>
+</ol>
+<p>More detail will be given in the Python Notebook for each of the above.</p>
+<div>
+<h2>Hints, tips, and notes</h2>
+<paper-icon-button title="Collapse 1 child cell under Hints, tips, and notes (Press <Shift> to also collapse sibling sections)" aria-disabled="false" role="button" noink="" icon="arrow-drop-down" tabindex="0"><iron-icon id="icon"></iron-icon></paper-icon-button></div>
+<ul>
+<li>Here I'm not going to mandate TensorBoard. In Colab, this is a little bit more involved (though it's not bad - I just don't want to add a complication). Instead, we'll just put the losses and accuracies in a list and print them after training. However, TensorBoard is very useful, particularly for projects, so I suggest playing around with it.</li>
+<li>Some of these runs will take several minutes to complete. This is the nature of ML. Grab a coffee or a beer, depending on what time of day it is.</li>
+<li>I strongly suggest using a CUDA or MPS (for Mac) enabled machine (i.e., one with an appropriate GPU). If your local machine doesn't have this, use Google Colab, where you can get GPU access. If you find you run out of resources on Colab, you may need to <a rel="nofollow noopener" target="_blank" href="https://colab.research.google.com/signup">purchase credits</a> - they are very reasonably priced (e.g., 100 compute units should easily suffice with plenty left over).</li>
+</ul>
+<h2>Grade weighting</h2>
+<p>At this stage, you know what I'm looking for. Each of the tasks 1 to 5 above will carry equal weight.</p></body></html>

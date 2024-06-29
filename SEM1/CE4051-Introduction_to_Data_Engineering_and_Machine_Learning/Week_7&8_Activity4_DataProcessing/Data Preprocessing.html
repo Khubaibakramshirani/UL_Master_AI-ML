@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html><head></head><body style="color: rgb(32, 33, 34); font-family: Verdana; font-size: 12pt;"><h2>Train/Test Split</h2>
+<p>We have covered this briefly in previous activities, but now we should get a better understanding.&nbsp;</p>
+<ul>
+<li><a rel="noopener" target="_blank" href="https://developers.google.com/machine-learning/crash-course/training-and-test-sets/video-lecture">https://developers.google.com/machine-learning/crash-course/training-and-test-sets/video-lecture</a>&nbsp;</li>
+<li><a rel="noopener" target="_blank" href="https://developers.google.com/machine-learning/crash-course/training-and-test-sets/splitting-data">https://developers.google.com/machine-learning/crash-course/training-and-test-sets/splitting-data</a>&nbsp;</li>
+<li><a rel="noopener" target="_blank" href="https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.train_test_split.html">https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.train_test_split.html</a>&nbsp;</li>
+</ul>
+<p>Good, quick, overview of splitting data. Most people simply use the 70-30 rule, 70% for training, 30% for tests, and this is a good rule of thumb to start. Sometimes, with more data, you might also go for an 80-20 split. The question is, why waste the test data? You are taking good data away from training your algorithm. The answer is that the test data is there to ensure that your model generalises to unseen data. That is, when you go to actually use your model, it works! Note the common gotcha to be careful about: never train on your test data. While the test data is known to you (seen by you), it is unseen by your algorithm.&nbsp;</p>
+<p>Here is an article that goes into the reason why doing this "properly" is so important:</p>
+<ul>
+<li><a rel="noopener" href="https://www.wired.com/story/machine-learning-reproducibility-crisis/">https://www.wired.com/story/machine-learning-reproducibility-crisis/</a></li>
+</ul>
+<hr>
+<div>
+<h2>Handling Missing Data&nbsp;</h2>
+<ul>
+<li><a rel="noopener" target="_blank" href="https://machinelearningmastery.com/handle-missing-data-python/">https://machinelearningmastery.com/handle-missing-data-python/</a>&nbsp;&nbsp;</li>
+<li><a rel="noopener" target="_blank" href="https://machinelearningmastery.com/statistical-imputation-for-missing-values-in-machine-learning/">https://machinelearningmastery.com/statistical-imputation-for-missing-values-in-machine-learning/</a>&nbsp;&nbsp;</li>
+<li><a rel="noopener" target="_blank" href="https://scikit-learn.org/stable/modules/impute.html">https://scikit-learn.org/stable/modules/impute.html</a>&nbsp;&nbsp;</li>
+</ul>
+<p>Data from the real world is often incomplete. Sensors can be corrupt, respondents in a survey can skip questions, and so on. A simple way to handle this may be to skip training samples that have missing data. However, this is not so smart if a lot of the data has missing values, as we are dropping a lot of good, if incomplete, samples. The tutorials above introduce you to the idea of how to handle missing data and give a good grasp of the Pandas and Scikit-learn classes for handling missing data.</p>
+<hr>
+<div>
+<h2>Feature Selection&nbsp;</h2>
+<p>In Andrew's lecture, which you covered in the last e-tivity, he mentions that a problem with overfitting can be that there are just too many features used without enough data, or perhaps some features are redundant. I do not suggest that we cover his later video (Model Selection) in this module, but rather I think that the Scikit-learn page on Feature Selection is useful to cover some feature selection approaches.&nbsp;</p>
+<p><a rel="noopener" target="_blank" href="https://scikit-learn.org/stable/modules/feature_selection.html">https://scikit-learn.org/stable/modules/feature_selection.html</a>&nbsp;&nbsp;</p>
+<p>You only need to look at the first three parts (though the other parts are interesting, they don't form part of this module):&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;1.13.1. Removing features with low variance&nbsp;<br>&nbsp;&nbsp;1.13.2. Univariate feature selection&nbsp;<br>&nbsp;&nbsp;1.13.3. Recursive feature elimination&nbsp;</p>
+<p>The part on low variance is quite straightforward. If the feature has low variance, then it is not a good feature for prediction, as it cannot distinguish samples.&nbsp;</p>
+<p>Univariate Feature Selection has a few different options. A couple of these are discussed here:&nbsp;<a rel="noopener" target="_blank" href="https://blog.datadive.net/selecting-good-features-part-i-univariate-selection/">https://blog.datadive.net/selecting-good-features-part-i-univariate-selection/</a>&nbsp;&nbsp;</p>
+<p>RFE is a quite involved algorithm that involves things like Random Forests. I do not suggest trying&nbsp;to&nbsp;learn the theory. Rather,&nbsp;it is useful to know that this kind of approach exists.&nbsp;</p>
+</div>
+</div></body></html>

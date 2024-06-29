@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html><head></head><body style="color: rgb(32, 33, 34); font-family: Verdana; font-size: 12pt;"><h1>Task 3: Support Vector Machine and Multi-Class Classification with scikit-learn&nbsp;</h1>
+<p><strong>Weight 10/100</strong></p>
+<p>Here we will investigate the multi-class SVM. This is, basically, the same as the previous task, except we will use the SVC rather than Logistic Regression.</p>
+<ol>
+<li>Load all of the samples from the Iris dataset, that is iris-setosa, iris-versicolor and iris-virginica. Load the petal length and petal width as the features. Assign the class labels
+<ul>
+<li>Iris-setosa = 0</li>
+<li>Iris-versicolor = 1</li>
+<li>Iris-virginica = 2&nbsp;</li>
+</ul>
+</li>
+<li>Use the scikit-learn <code>train_test_split</code> function to split into 30% test and 70% training data
+<ul>
+<li>Set the <code>stratify</code> parameter to <code>y</code>. The stratify option will make sure that you get the same split of data as is in the original dataset. I.e. you will get 33% of each of the Iris types in your training and test data.</li>
+</ul>
+</li>
+<li>Use the scikit-learn <code>StandardScaler</code> function to apply standard scaling to both training and test data&nbsp;
+<ul>
+<li>Print the scaled data</li>
+</ul>
+</li>
+<li>Train an instance of the scikitlearn <code>sklearn.svm</code> <code>SVC</code> (Support Vector Classifier) algorithm on the provided data
+<ul>
+<li>You can use all the default parameters, except set the kernel to linear</li>
+</ul>
+</li>
+<li>Plot the decision boundary using the supplied <code>plot_decision_boundary</code> function</li>
+<li>Using sklearn's <code>accuracy_score</code>, calculate the accuracy score on the test data&nbsp;</li>
+</ol></body></html>

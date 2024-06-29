@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html><head>
+   <link rel="stylesheet" href="/shared/HTML-Template-Library/UL-Templates/_assets/css/styles.css"><link rel="stylesheet" href="https://s.brightspace.com/lib/fonts/0.5.0/fonts.css"></head><body><p style="text-align: center;"><img src="../00_Images/Coding%20Task.gif" alt="" title="" data-d2l-editor-default-img-style="true" style="max-width: 100%;" role="presentation"></p>
+<h1 class="page-header col-12 col-lg-10" style="text-align: center;"><span style="font-size: 32px;"><strong style="color: rgb(0, 83, 53); font-family: Lato, sans-serif;"><span style="color: rgb(0, 83, 53); font-family: Lato, sans-serif;">Task</span></strong></span></h1>
+<hr>
+<h2>Before you start...</h2>
+<ul>
+<li>Please study the primary resources for E-tivity 2.</li>
+<li>Work on tasks 1 and 2 in the first week. This is important as these tasks are linked to your forum activity for which you are graded. Additionally, it will allow you to benefit from your peers’ feedback early on. Of course we understand you will not be able to finalise these tasks in the first week, but you should attempt to upload at least a first attempt.&nbsp;</li>
+<li>Please note that Task 3 and 4 have their deadline in week 2, so you can work on these once you have fully understood Tasks 1 and 2.</li>
+<li>Git clone the repository in below link and use notebook Etivity2.ipynb&nbsp;&nbsp;to implement the below task</li>
+</ul>
+<div class="row" style="text-align: center;">
+<p>https://gitlab.com/ul31/mscai/ce6002-ce6012/group<strong>X</strong>/e-tivity2.git&nbsp;</p>
+<p>Please replace the&nbsp;<strong>X</strong> in <strong>groupX</strong> in above URL with the number of your group.</p>
+<p style="text-align: left;">TIP:&nbsp;<strong>create a new branch with your own name in the branch name</strong>&nbsp;to help your peers find your code.</p>
+<hr></div>
+<p><strong> </strong></p>
+<h2>Task Description</h2>
+<h3>Task 1 (Complete first attempt by Saturday Week 3)</h3>
+<p>In this task we will explore the impact of model complexity on the generalization capabilities of a model. We will use polynomial data transformations as a simple means of tweaking model complexity.&nbsp;Perform&nbsp;<strong>either</strong>&nbsp;Task 1a&nbsp;<strong>or</strong>&nbsp;Task 1b. Do note that the content from both tasks will be part of the online exam, so you should engage with peers who chose the other task (e.g. via the forum).</p>
+<h4>Task 1a</h4>
+<ul>
+<li>Train scikit-learn’s Logistic Regression algorithm using the&nbsp;Et2_Classification_TrainingData.csv dataset provided in the repository&nbsp;without adding extra features to those provided.&nbsp;</li>
+<li>Test the performance of your model using the&nbsp;Et2_Classification_TestData.csv dataset.</li>
+<li>Observe your results and explain why these results seem disappointing (record your thoughts in a Markdown cell in your notebook).</li>
+<li>Now choose suitable new features and use these to improve the classification performance. Observe and explain (use plots where appropriate) why the classification performance has improved.</li>
+<li>Try a few different hand-crafted (i.e. no need to use functions to create the transformations) transformations with and without committing the sin of "data snooping" and note the differences.</li>
+<li>Answer the following questions:
+<ul>
+<li>How do the found values for E<sub>in</sub>&nbsp;and E<sub>out</sub>&nbsp;for the various models relate to model complexity?</li>
+<li>Explain how data transformations can lead to linear separability of a dataset.</li>
+<li>Explain how data transformations effect the complexity of your model.</li>
+</ul>
+</li>
+</ul>
+<h4>Task 1b</h4>
+<ul>
+<li>Split the dataset provided in&nbsp;<em>Et2_Regression_Data.csv</em>&nbsp;into a training and a test set (decide on a suitable ratio).&nbsp;</li>
+<li>Use the provided linear regression algorithm&nbsp;to obtain the best possible fit to the training data set .&nbsp;</li>
+<li>With the knowledge that the data source is a noisy polynomial with the highest&nbsp;order no lower than 5 and no higher than 10, use a structured approach to try different feature transformations using the provided transformation functions.&nbsp;</li>
+<li>Record the performance on training data and on test data.</li>
+<li>Use the results to decide on the data transformation that yields the best results.</li>
+<li>Answer the following questions:
+<ul>
+<li>How does the plot of Ein and Eout versus degree of the used polynomial data transformation&nbsp;relate to model complexity?</li>
+<li>How can the choice of transformation that yielded the best results be explained in terms of sample complexity?&nbsp;</li>
+</ul>
+</li>
+</ul>
+<h4 style="text-align: left;">Rubric for Task 1</h4>
+<p>Please note you will be graded on your task using the below Rubric (Task 1 elements).&nbsp;</p>
+<p><a href="/d2l/common/dialogs/quickLink/quickLink.d2l?ou=38446&amp;type=rubric&amp;rCode=0B1740D0-E94C-4103-B4FD-F1C4C1D25EA2-47878" target="_self">Rubric E-tivity 2</a></p>
+<p>But not until you have made your final submission. Hence, you can use week 2 to improve your initial submission.&nbsp;</p>
+<div id="itemContainer::sectionWrapper::section::column::itemTable::item:8:" role="listitem" tabindex="0">
+<div>
+<h3>Task 2 (Complete by Saturday Week 3)</h3>
+</div>
+</div>
+<div id="itemContainer::sectionWrapper::section::column::itemTable::item:10:" role="listitem" tabindex="0">
+<div id="itemContainer::sectionWrapper::section::column::itemTable::item:11:" role="listitem" tabindex="0">
+<div>
+<div>
+<p style="text-align: left;">In Task 1 we looked at how we can increase the complexity of linear models by adding extra features. Note that this is only one way of increasing the complexity of a model. For example, for neural networks, complexity can be changed by adding extra neurons to layers, or extra layers. As you should understand by now, we pay a price for trying to fit our data using a higher complexity model as a higher complexity model may overfit the data and perform poorly on out-of-sample data. In task 2 we will investigate what we can do to control the complexity of our model and thus prevent overfitting. In this task we will also see the difference between the validation error, E<sub>val</sub>&nbsp;and out-of-sample error, E<sub>out</sub>.&nbsp;E<sub>val</sub>&nbsp;is obtained during training from&nbsp;a small set of training data held back during training and only used to test the perfomance of the model to make decisions during training.&nbsp;E<sub>out&nbsp;</sub>is the error obtained when testing the model on data set aside for this purpose from the outset.&nbsp;&nbsp;</p>
+<p>For task 2, the following is provided and should be made use of:</p>
+<ul>
+<li>the dataset in Et2_Regression_Data.csv</li>
+<li>function weights_reg to use linear regression with a regularization parameter</li>
+<li>a feature transformation function transPoly</li>
+<li>a code snippet suggesting how to keep track of E<sub>in</sub>&nbsp;and E<sub>val</sub>&nbsp;whilst trying various regularisers</li>
+</ul>
+<p>&nbsp;You should do the following:</p>
+<ul>
+<li>Use the provide function transPoly to obtain a weight vector of the original feature raised up to the power of 50</li>
+<li>Use the provided&nbsp;<em>weights_reg&nbsp;</em>function to perform linear regression on the data.&nbsp;</li>
+<li>Using the provided code snippet, find the optimum regularization parameter, l. In order to do so, you will need to decide on a suitable list of l values. Pick at most 1000 values! Once you have found the optimal l, compare the E<sub>out&nbsp;</sub>obtained with this l with the E<sub>out</sub>&nbsp;obtained without regularization. You should see an impressive improvement!</li>
+<li>Provide the following plots:</li>
+</ul>
+<ol>
+<li style="list-style-type: none;">
+<ol>
+<li>A plot showing model performance&nbsp;vs l on the domain [0,1]</li>
+<li>A plot with three sub-plots containing an overfitted model, a model with the optimal l, and an underfitted model. In each plot, you should plot the target function in addition to the final hypothesis. Choose values for l that clearly demonstrate over- and underfitting.</li>
+</ol>
+</li>
+</ol>
+<ul>
+<li>Answer the following questions:
+<ol>
+<li>Interpret the information in the requested figures.</li>
+<li>Explain the strategy chosen to decide on the optimum amount of regularisation.</li>
+<li>Explain the effect of the term&nbsp;l*np.identity(m.shape[0]) in the pseudo-inverse.</li>
+</ol>
+</li>
+</ul>
+<h4 style="text-align: left;">Rubric for Task 2</h4>
+</div>
+</div>
+</div>
+<div id="itemContainer::sectionWrapper::section::column::itemTable::item:12:" role="listitem" tabindex="0">
+<div>
+<p>Please note you will be graded on your task using the below Rubric (Task 2 elements).<a href="/d2l/common/dialogs/quickLink/quickLink.d2l?ou=38446&amp;type=rubric&amp;rCode=0B1740D0-E94C-4103-B4FD-F1C4C1D25EA2-47878" target="_self"></a></p>
+<p><a href="/d2l/common/dialogs/quickLink/quickLink.d2l?ou=38446&amp;type=rubric&amp;rCode=0B1740D0-E94C-4103-B4FD-F1C4C1D25EA2-47878" target="_self">Rubric E-tivity 2</a></p>
+<h3>Task 3 (Complete by Sunday Week 4)</h3>
+<p>Update the code-snippet from Task 2 to perform the same analysis using 10-fold cross-validation. Use Scikitlearn’s KFOLD for this and think carefully about the parameters you use in KFOLD. In your reflection, explain the procedure followed by using KFOLDS and your choice of parameters.</p>
+<h4 style="text-align: left;">Rubric for Task 3</h4>
+<p>Please note you will be graded on your task using the below Rubric (Task 3 elements).&nbsp;</p>
+<p><a href="/d2l/common/dialogs/quickLink/quickLink.d2l?ou=38446&amp;type=rubric&amp;rCode=0B1740D0-E94C-4103-B4FD-F1C4C1D25EA2-47878" target="_self">Rubric E-tivity 2</a></p>
+<p></p>
+<h3>Task 4 (Complete by Sunday Week 4)</h3>
+<p>Use scikit-learn’s RidgeCV and LassoCV to obtain the optimum regularisation using the same transformed data (i.e. features up to 50th order).</p>
+<p>Observe the resulting error and l (lambda), and compare these to previous results. What do you see? Is this what you expected?<br>Compare the weights obtained with RidgeCV to those obtained with LassoCV. What do you see? Is this what you expected?</p>
+<h4 style="text-align: left;">Rubric for Task 4</h4>
+<p>Please note you will be graded on your task using the below Rubric (Task 4 elements).&nbsp;</p>
+<p><a href="/d2l/common/dialogs/quickLink/quickLink.d2l?ou=38446&amp;type=rubric&amp;rCode=0B1740D0-E94C-4103-B4FD-F1C4C1D25EA2-47878" target="_self">Rubric E-tivity 2</a></p>
+</div>
+</div>
+</div></body></html>

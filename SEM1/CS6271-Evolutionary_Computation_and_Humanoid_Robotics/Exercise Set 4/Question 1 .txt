@@ -1,0 +1,42 @@
+Given the grammar below, show what the following individual (already converted to decimal) would map to. 
+You can assume that there is no wrapping, 
+so if you get to the end of the genome, you can stop and assume that is your answer:
+<e>::= (<o><e><e>)|(<u><e>)|<v> -- 3
+<o>::=+|-|/|*					-- 4
+<u>::=Sin|Cos|Tan				-- 3
+<v>::=x|y						-- 2
+------------------------------------------------------------------------------------------------------------
+Num	 |	Expression					|		Calculation |	Selection	|	Result
+----------------------------------------------------------------------------------------------------------
+27,		<e>  						=> <e> - 27%3 	= 0	=> (<o><e><e>)  =>> (<o><e><e>)
+176, 	(<o><e><e>) 				=> <o> - 176 %4 = 0 => + 			=>> (+<e><e>) 
+22, 	(+<e><e>) 					=> <e> - 22 % 3 = 1 - (<u><e>) 		==> (+(<u><e>)<e>)
+53, 	(+(<u><e>)<e>) 				=> <u> - 53% 3  = 2 - Tan 			=>> (+(Tan<e>)<e>)
+77, 	(+(Tan<e>)<e>) 				=> <e> - 77 %3  = 2 - <v> 			= > (+(Tan<v>)<e>)
+74, 	(+(Tan<v>)<e>) 				=> <v> - 74 % 2 = 0 - x 			=>> (+(Tan x)<e>)
+177,	(+(Tan x)<e>) 				=> <e> - 177 %3 = 0 - (<o><e><e>) 	=>> (+(Tan x)(<o><e><e>))
+215,	(+(Tan x)(<o><e><e>)) 		=> <o> - 215%4 	= 3 - * 			==> (+(Tan x)(* <e><e>))
+200,	(+(Tan x)(* <e><e>)) 		=> <e> - 200%3 	= 2 - <v> 			==> (+(Tan x)(* <v><e>))
+183,	(+(Tan x)(* <v><e>)) 		=> <v> - 183%2 	= 1 - y 			==> (+(Tan x)(* y <e>))
+229,	(+(Tan x)(* y <e>)) 		=> <e> - 229%3 	= 1 - (<u><e>) 		==> (+(Tan x)(* y (<u><e>)))
+111,	(+(Tan x)(* y (<u><e>)))	=> <u> - 111%3 	= 0 - Sin 			==> (+(Tan x)(* y (Sin<e>)))
+77, 	(+(Tan x)(* y (Sin <e>)))	=> <e> - 77%3   = 2 - <v> 			==> (+(Tan x)(* y (Sin <v>)))
+124,	(+(Tan x)(* y (Sin <v>)))	=> <v> - 124%2  = 0 - x 			==> (+(Tan x)(* y (Sin x)))
+66, 
+94, 
+91, 
+232, 
+44, 
+53, 
+114, 
+71, 
+234, 
+98, 
+72, 
+106, 
+71, 
+231, 
+97, 
+203,
+32,
+15
